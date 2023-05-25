@@ -1,21 +1,19 @@
 import express from "express";
 import { Request, Response } from "express";
-import { sum } from "../controllers/pocker";
-import { onepatient } from "../controllers/pocker";
-import { sub } from "../controllers/pocker";
+import controller from "../controllers/pocker";
 
 const router = express.Router();
 
 router.post("/pocker", (req: Request, res: Response) => {
-  sum(req, res);
+  controller.pocker.sum(req, res);
 });
 
 router.post("/clock", (req: Request, res: Response) => {
-  onepatient(req, res);
+  controller.clock.onepatient(req, res);
 });
 
 router.post("/sub", (req: Request, res: Response) => {
-  sub(req, res);
+  controller.substring.sub(req, res);
 });
 
 export default router;

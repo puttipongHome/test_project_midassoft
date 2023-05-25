@@ -58,8 +58,11 @@ const clock = {
 const substring = {
   sub: async (req: Request, res: Response) => {
     const body = req.body.text;
+    console.log("🚀 ~ req.body.text:", req.body.text);
+    console.log("🚀 ~ req.body:", req.body);
     const subString = req.body.subString;
-    const words = body.split(" ");
+    const words = body.split(" , ");
+    console.log("🚀 ~ body:", body);
     const commonText = subString;
     const data = words.map((word) => word.replace(commonText, ""));
     console.log("🚀 ~ data:", data);
