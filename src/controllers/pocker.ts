@@ -49,7 +49,6 @@ const clock = {
     if (angle > 180) {
       angle = 360 - angle;
     }
-    console.log("🚀 ~ angle:", angle);
     const results = angle;
     return res.status(200).json({ results });
   },
@@ -58,13 +57,9 @@ const clock = {
 const substring = {
   sub: async (req: Request, res: Response) => {
     const body = req.body.text;
-    console.log("🚀 ~ req.body.text:", req.body.text);
-    console.log("🚀 ~ req.body:", req.body);
     const subString = req.body.subString;
-    console.log("🚀 ~ body:", body);
     const commonText = subString;
     const data = body.map((word) => word.replace(commonText, ""));
-    console.log("🚀 ~ data:", data);
     const results = data;
     return res.status(200).json({ results });
   },
