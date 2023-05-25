@@ -61,10 +61,9 @@ const substring = {
     console.log("🚀 ~ req.body.text:", req.body.text);
     console.log("🚀 ~ req.body:", req.body);
     const subString = req.body.subString;
-    const words = body.split(" , ");
     console.log("🚀 ~ body:", body);
     const commonText = subString;
-    const data = words.map((word) => word.replace(commonText, ""));
+    const data = body.map((word) => word.replace(commonText, ""));
     console.log("🚀 ~ data:", data);
     const results = data;
     return res.status(200).json({ results });
